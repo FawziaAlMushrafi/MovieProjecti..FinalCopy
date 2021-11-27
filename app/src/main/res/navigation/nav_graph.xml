@@ -18,5 +18,9 @@
         android:id="@+id/movieDataFragment"
         android:name="com.example.movieproject.MovieDataFragment"
         android:label="fragment_movie_data"
-        tools:layout="@layout/fragment_movie_data" />
+        tools:layout="@layout/fragment_movie_data" >
+        <argument
+            android:name="MovieId"
+            app:argType="integer" />
+    </fragment>
 </navigation>
