@@ -17,50 +17,58 @@
 
     </data>
     <!-- DETAIL Page -->
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="555dp"
+        android:layout_gravity="center"
+ >
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="297dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="304dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="112dp"
             android:paddingStart="20dp"
             android:text="@{shareviewmodel.title}"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.893"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Detail"
-            android:layout_width="339dp"
-            android:layout_height="137dp"
-            android:layout_marginTop="312dp"
-            android:layout_marginEnd="44dp"
+            android:layout_width="337dp"
+            android:layout_height="241dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
             android:paddingStart="20dp"
             android:text="@{shareviewmodel.detail}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/movie_image"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintVertical_bias="0.037" />
 
         <ImageView
             android:id="@+id/movie_image"
-            android:layout_width="245dp"
-            android:layout_height="148dp"
-            android:layout_marginEnd="108dp"
-            android:layout_marginBottom="48dp"
+            android:layout_width="250dp"
+            android:layout_height="364dp"
+            android:layout_marginBottom="160dp"
             android:adjustViewBounds="true"
             android:foregroundGravity="right"
             android:padding="2dp"
             android:scaleType="fitXY"
             app:imageUrl="@{shareviewmodel.poster}"
-            app:layout_constraintBottom_toTopOf="@+id/Detail"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.094"
+            app:layout_constraintStart_toStartOf="parent"
             tools:src="@tools:sample/backgrounds/scenic" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <!--        <ImageView-->
     <!--            android:id="@+id/imageD"-->
