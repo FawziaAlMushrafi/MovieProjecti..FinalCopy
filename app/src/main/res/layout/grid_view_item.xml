@@ -5,6 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
+            name="viewModel"
+            type="com.example.movieproject.overview.ViewModel" />
+        <variable
 
             name="movieList"
             type="com.example.movieproject.data.ResultsItem" />
@@ -34,6 +37,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
 
                 <Button
                     android:id="@+id/button"

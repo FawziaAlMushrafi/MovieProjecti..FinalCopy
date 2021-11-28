@@ -2,16 +2,13 @@ package com.example.movieproject.overview
 
 
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.movieproject.data.Response
 import com.example.movieproject.data.ResultsItem
 import com.example.movieproject.network.MovieApi
 import kotlinx.coroutines.launch
-import java.util.*
 
 enum class MovieApiStatus { LOADING, ERROR, DONE }
 

@@ -3,13 +3,14 @@ package com.example.movieproject.overview
 
 
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.movieproject.R
 import com.example.movieproject.data.ResultsItem
-
 
 
 @BindingAdapter("listData")              //setData
@@ -34,33 +35,34 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 
 
 
-/*
-imgView.load(imgUri) {
-    placeholder(R.drawable.loading_animation)
-    error(R.drawable.ic_broken_image)
-}
-}
-}
-
-//@BindingAdapter("MovieApiStatus")
-//fun bindStatus(statusImageView: ImageViewListatus: MovieApiStatus?) {
-//    when (status) {
-//        MovieApiStatus.LOADING -> {
-//            statusImageView.visibility = View.VISIBLE
-//            statusImageView.setImageResource(R.drawable.loading_animation)
-//        }
-//        MovieApiStatus.ERROR -> {
-//            statusImageView.visibility = View.VISIBLE
-//            statusImageView.setImageResource(R.drawable.ic_connection_error)
-//        }
-//        MovieApiStatus.DONE -> {
-//            statusImageView.visibility = View.GONE
-//        }
-//    }
+//
+//imgView.load(imgUri) {
+//    placeholder(R.drawable.loading_animation)
+//    error(R.drawable.ic_broken_image)
+//}
+//}
 //}
 
-8?
- */
+@BindingAdapter("MovieApiStatus")
+fun bindStatus(statusImageView: ImageView,status: MovieApiStatus?) {
+    when (status) {
+        MovieApiStatus.LOADING -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.loading_animation)
+        }
+        MovieApiStatus.ERROR -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.ic_connection_error)
+        }
+        MovieApiStatus.DONE -> {
+            statusImageView.visibility = View.GONE
+        }
+        null -> TODO()
+    }
+}
+
+
+
 
 
 
