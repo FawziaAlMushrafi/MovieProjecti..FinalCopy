@@ -33,7 +33,9 @@ class ViewModel : ViewModel() {
     val photos: LiveData<List<ResultsItem>> = _photos
     var title = MutableLiveData<String>()
     var detail = MutableLiveData<String>()
-    var poster = MutableLiveData<Any>()
+    var poster = MutableLiveData<Any?>()
+
+
 
 
     init {
@@ -67,6 +69,7 @@ class ViewModel : ViewModel() {
         title.value = item?.title
         detail.value = item?.overview
         poster.value = item?.posterPath
+
 
 
 

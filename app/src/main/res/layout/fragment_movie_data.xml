@@ -10,6 +10,11 @@
         <variable
             name="dataFragment"
             type="com.example.movieproject.MovieDataFragment" />
+
+        <variable
+            name="movieList"
+        type="com.example.movieproject.data.ResultsItem" />
+
     </data>
     <!-- DETAIL Page -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,33 +24,40 @@
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="339dp"
-            android:layout_height="137dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="64dp"
+            android:layout_width="297dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="16dp"
             android:paddingStart="20dp"
             android:text="@{shareviewmodel.title}"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Detail"
             android:layout_width="339dp"
             android:layout_height="137dp"
-            android:layout_marginTop="252dp"
-            android:layout_marginEnd="56dp"
-            android:text="@{shareviewmodel.detail}"
+            android:layout_marginTop="312dp"
+            android:layout_marginEnd="44dp"
             android:paddingStart="20dp"
+            android:text="@{shareviewmodel.detail}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/movie_image"
+            android:layout_width="245dp"
+            android:layout_height="148dp"
+            android:layout_marginEnd="108dp"
+            android:layout_marginBottom="48dp"
+            android:adjustViewBounds="true"
+            android:foregroundGravity="right"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            app:imageUrl="@{shareviewmodel.poster}"
+            app:layout_constraintBottom_toTopOf="@+id/Detail"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Detail" />
+            tools:src="@tools:sample/backgrounds/scenic" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

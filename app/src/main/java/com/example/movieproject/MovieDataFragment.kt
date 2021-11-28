@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.example.movieproject.databinding.FragmentMovieDataBinding
-import com.example.movieproject.databinding.FragmentMovieListBinding
 import com.example.movieproject.overview.MovieGridAdapter
 import com.example.movieproject.overview.ViewModel
 
