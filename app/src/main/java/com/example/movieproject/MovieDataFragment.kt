@@ -1,5 +1,7 @@
 package com.example.movieproject
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -25,6 +27,7 @@ class MovieDataFragment : Fragment() {
             position= it!!.getInt("MovieId")
         }
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         viewModel.moveieInfo(position)
@@ -34,7 +37,10 @@ class MovieDataFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+//        val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.themoviedb.org/"))
+//        startActivity(i)
         val binding = FragmentMovieDataBinding.inflate(inflater)
+
 
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment

@@ -1,5 +1,7 @@
 package com.example.movieproject
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +26,9 @@ class MovieListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentMovieListBinding.inflate(inflater)
+
+
+
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = this

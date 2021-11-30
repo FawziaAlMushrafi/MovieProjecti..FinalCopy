@@ -1,7 +1,6 @@
 package com.example.movieproject.overview
 
 
-
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,7 +13,6 @@ enum class MovieApiStatus { LOADING, ERROR, DONE }
 
 
 class ViewModel : ViewModel() {
-
 
 
     private val _status = MutableLiveData<MovieApiStatus>()
@@ -32,14 +30,14 @@ class ViewModel : ViewModel() {
     var detail = MutableLiveData<String>()
     var poster = MutableLiveData<String>()
     var rating = MutableLiveData<String>()
-
-
+    var language = MutableLiveData<String>()
+    var genre = MutableLiveData<String>()
+    var vote = MutableLiveData<String>()
 
 
     init {
         getMovies()
     }
-
 
 
     private fun getMovies() {
@@ -59,7 +57,8 @@ class ViewModel : ViewModel() {
             }
         }
     }
-    fun moveieInfo(indext:Int){
+
+    fun moveieInfo(indext: Int) {
         val item = _photos.value?.get(indext)
         // Log.e("TAG","title:${title.value}")
         //  Log.e("TAG","title:${title.value}")
@@ -68,17 +67,10 @@ class ViewModel : ViewModel() {
         detail.value = item?.overview
         poster.value = item?.posterPath
         rating.value = item?.voteAverage.toString()
-
-
-
-
+        language.value = item?.originalLanguage
+        genre.value = item?.genreIds.toString()
+        vote.value = item?.voteCount.toString()
     }
-
-
-
-
-
-
 
 
 }
