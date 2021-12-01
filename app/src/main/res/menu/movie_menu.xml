@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/SHOW_ALL"
+        android:title="Show Top" />
+    <item
+        android:id="@+id/action"
+        android:title="@string/action" />
+    <item
+        android:id="@+id/adventure"
+        android:title="@string/adventure" />
+    <item
+        android:id="@+id/animation"
+        android:title="@string/animation" />
+</menu>

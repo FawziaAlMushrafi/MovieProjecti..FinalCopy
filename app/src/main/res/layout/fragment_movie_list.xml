@@ -32,8 +32,8 @@
         <ImageView
 
             android:id="@+id/weblogo"
-            android:layout_width="386dp"
-            android:layout_height="78dp"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
             android:background="#042443"
             android:src="@drawable/tmdb"
             android:tag="https://www.themoviedb.org/"

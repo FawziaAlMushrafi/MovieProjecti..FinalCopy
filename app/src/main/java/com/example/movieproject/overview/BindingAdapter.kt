@@ -32,17 +32,6 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
     }
 }
 
-
-
-
-//
-//imgView.load(imgUri) {
-//    placeholder(R.drawable.loading_animation)
-//    error(R.drawable.ic_broken_image)
-//}
-//}
-//}
-
 @BindingAdapter("MovieApiStatus")
 fun bindStatus(statusImageView: ImageView,status: MovieApiStatus?) {
     when (status) {

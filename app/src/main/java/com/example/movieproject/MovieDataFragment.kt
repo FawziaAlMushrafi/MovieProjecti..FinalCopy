@@ -30,7 +30,7 @@ class MovieDataFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        viewModel.moveieInfo(position)
+        viewModel.movieInfo(position)
     }
 
     override fun onCreateView(

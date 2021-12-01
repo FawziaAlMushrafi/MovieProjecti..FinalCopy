@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.movieproject.data.ResultsItem
 import com.example.movieproject.network.MovieApi
+import com.example.movieproject.network.MovieApiFilter
 import kotlinx.coroutines.launch
 
 enum class MovieApiStatus { LOADING, ERROR, DONE }
@@ -14,7 +15,7 @@ enum class MovieApiStatus { LOADING, ERROR, DONE }
 
 class ViewModel : ViewModel() {
 
-
+private val _properties = MutableLiveData<List<ResultsItem>>()
     private val _status = MutableLiveData<MovieApiStatus>()
 
     // The external immutable LiveData for the request status
@@ -39,8 +40,7 @@ class ViewModel : ViewModel() {
         getMovies()
     }
 
-
-    private fun getMovies() {
+     fun getMovies() {
 
         // here lodong
         _status.value = MovieApiStatus.LOADING
@@ -58,11 +58,26 @@ class ViewModel : ViewModel() {
         }
     }
 
-    fun moveieInfo(indext: Int) {
-        val item = _photos.value?.get(indext)
-        // Log.e("TAG","title:${title.value}")
-        //  Log.e("TAG","title:${title.value}")
 
+     fun getMovieFilter(filter: MovieApiFilter) {
+
+        // here lodong
+        _status.value = MovieApiStatus.LOADING
+        viewModelScope.launch {
+
+            try {
+                //MovieApi.retrofitService.getPhotos()
+                _photos.value = MovieApi.retrofitService.getMovieFilter(filter.value).results
+
+                _status.value = MovieApiStatus.DONE
+            } catch (e: Exception) {
+                _status.value = MovieApiStatus.ERROR
+//                _photos.value = listOf()
+            }
+        }
+    }
+    fun movieInfo(indext: Int) {
+        val item = _photos.value?.get(indext)
         title.value = item?.title
         detail.value = item?.overview
         poster.value = item?.posterPath
