@@ -33,7 +33,7 @@ class MovieGridAdapter : ListAdapter<ResultsItem, MovieGridAdapter.MovieViewHold
             binding.executePendingBindings()
         }
 
-        var pointer = binding.button
+        var pointer = binding.movieImage
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<ResultsItem>() {
