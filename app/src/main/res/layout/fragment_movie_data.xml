@@ -13,120 +13,140 @@
 
         <variable
             name="movieList"
-        type="com.example.movieproject.data.ResultsItem" />
+            type="com.example.movieproject.data.ResultsItem" />
 
     </data>
     <!-- DETAIL Page -->
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background">
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            app:imageUrl="@{shareviewmodel.backposter}"
+            android:src="@drawable/background"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background">
+            android:orientation="horizontal"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="20dp"
+            android:weightSum="3">
 
-            <TextView
-                android:id="@+id/genre2"
-                android:layout_width="97dp"
-                android:layout_height="29dp"
-                android:layout_marginTop="36dp"
-                android:layout_marginEnd="104dp"
-
-                android:drawableLeft="@drawable/ic_baseline_how_to_vote_24"
-                android:text="@{shareviewmodel.vote}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/rating"
-                app:layout_constraintTop_toBottomOf="@+id/rating" />
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="312dp"
-                android:layout_height="44dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:paddingStart="20dp"
-                android:text="@{shareviewmodel.title}"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/Detail"
-                android:layout_width="358dp"
-                android:layout_height="121dp"
-                android:layout_marginEnd="36dp"
-                android:layout_marginBottom="4dp"
-                android:gravity="center"
-                android:paddingStart="20dp"
-                android:text="@{shareviewmodel.detail}"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:id="@+id/movie_image"
-                android:layout_width="180dp"
-                android:layout_height="251dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="160dp"
-                android:adjustViewBounds="true"
-                android:foregroundGravity="right"
-                android:padding="2dp"
+                android:layout_width="0dp"
+                android:layout_height="190dp"
+                android:layout_weight="1"
                 android:scaleType="fitXY"
-                app:imageUrl="@{shareviewmodel.poster}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title"
-                app:layout_constraintVertical_bias="0.0"
-                tools:src="@tools:sample/backgrounds/scenic" />
+                app:imageUrl="@{shareviewmodel.poster}" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_weight="2"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center"
+                    android:text="@{shareviewmodel.title}"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="start"
+                    android:text="OverView:"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:text="@{shareviewmodel.detail}"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:weightSum="3"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
 
             <TextView
                 android:id="@+id/rating"
-                android:layout_width="86dp"
-                android:layout_height="18dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="100dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_baseline_star_24"
-
                 android:text="@{shareviewmodel.rating}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title" />
+                app:layout_constraintTop_toTopOf="@+id/Detail"
+                tools:layout_editor_absoluteX="262dp" />
+
+            <TextView
+                android:id="@+id/genre2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_baseline_how_to_vote_24"
+                android:text="@{shareviewmodel.vote}"
+                app:layout_constraintTop_toTopOf="@+id/Detail"
+                tools:layout_editor_absoluteX="130dp" />
+
+
 
             <TextView
                 android:id="@+id/language"
-                android:layout_width="86dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginEnd="104dp"
-
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_baseline_language_24"
                 android:text="@{shareviewmodel.language}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/rating"
-                app:layout_constraintTop_toBottomOf="@+id/rating" />
+                app:layout_constraintTop_toTopOf="@+id/Detail"
+                tools:layout_editor_absoluteX="17dp" />
 
-            <TextView
-                android:id="@+id/overview"
-                android:layout_width="118dp"
-                android:layout_height="23dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginBottom="4dp"
-                android:text="OverView:"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/Detail"
-                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
 
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+    </LinearLayout>
 
 </layout>

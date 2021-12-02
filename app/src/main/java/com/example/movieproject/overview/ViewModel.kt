@@ -34,6 +34,7 @@ private val _properties = MutableLiveData<List<ResultsItem>>()
     var language = MutableLiveData<String>()
     var genre = MutableLiveData<String>()
     var vote = MutableLiveData<String>()
+    var backposter = MutableLiveData<String>()
 
 
     init {
@@ -76,8 +77,8 @@ private val _properties = MutableLiveData<List<ResultsItem>>()
             }
         }
     }
-    fun movieInfo(indext: Int) {
-        val item = _photos.value?.get(indext)
+    fun movieInfo(index: Int) {
+        val item = _photos.value?.get(index)
         title.value = item?.title
         detail.value = item?.overview
         poster.value = item?.posterPath
@@ -85,6 +86,7 @@ private val _properties = MutableLiveData<List<ResultsItem>>()
         language.value = item?.originalLanguage
         genre.value = item?.genreIds.toString()
         vote.value = item?.voteCount.toString()
+        backposter.value = item?.backdropPath
     }
 
 
