@@ -35,6 +35,7 @@ private val _properties = MutableLiveData<List<ResultsItem>>()
     var genre = MutableLiveData<String>()
     var vote = MutableLiveData<String>()
     var backposter = MutableLiveData<String>()
+    var movieid = MutableLiveData<Int>()
 
 
     init {
@@ -87,6 +88,7 @@ private val _properties = MutableLiveData<List<ResultsItem>>()
         genre.value = item?.genreIds.toString()
         vote.value = item?.voteCount.toString()
         backposter.value = item?.backdropPath
+        movieid.value = item?.id
     }
 
 

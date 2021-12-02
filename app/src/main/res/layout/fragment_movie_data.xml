@@ -17,7 +17,10 @@
 
     </data>
     <!-- DETAIL Page -->
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="fitXY"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
             app:imageUrl="@{shareviewmodel.backposter}"
             android:src="@drawable/background"/>
 
@@ -54,6 +58,7 @@
                 app:imageUrl="@{shareviewmodel.poster}" />
 
             <LinearLayout
+
                 android:layout_width="0dp"
                 android:layout_height="300dp"
                 android:layout_weight="2"
@@ -80,14 +85,16 @@
                     android:gravity="start"
                     android:text="OverView:"
                     android:textColor="@color/black"
-                    android:textSize="16dp"
+                    android:textSize="15dp"
 
                     android:textStyle="bold" />
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
                 <TextView
                     android:id="@+id/Detail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="220dp"
+                    android:layout_height="248dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="25dp"
                     android:layout_marginEnd="10dp"
@@ -95,23 +102,29 @@
                     android:text="@{shareviewmodel.detail}"
                     android:textColor="@color/black"
                     android:textSize="14dp" />
-
+</ScrollView>
             </LinearLayout>
 
 
         </LinearLayout>
 
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:weightSum="3"
             android:layout_gravity="bottom"
             android:layout_marginStart="20dp"
             android:layout_marginTop="40dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="3">
 
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
 
             <TextView
                 android:id="@+id/rating"
@@ -134,7 +147,6 @@
                 tools:layout_editor_absoluteX="130dp" />
 
 
-
             <TextView
                 android:id="@+id/language"
                 android:layout_width="0dp"
@@ -148,5 +160,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
+</ScrollView>
 </layout>

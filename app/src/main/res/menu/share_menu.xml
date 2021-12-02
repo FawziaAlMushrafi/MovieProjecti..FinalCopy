@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="@layout/fragment_movie_data">
+
+<item
+        android:id="@+id/shareMenuButton"
+        android:icon="?android:attr/actionModeShareDrawable"
+        android:title="@string/share"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+</menu>
