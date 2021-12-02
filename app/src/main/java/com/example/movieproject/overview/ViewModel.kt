@@ -15,7 +15,6 @@ enum class MovieApiStatus { LOADING, ERROR, DONE }
 
 class ViewModel : ViewModel() {
 
-private val _properties = MutableLiveData<List<ResultsItem>>()
     private val _status = MutableLiveData<MovieApiStatus>()
 
     // The external immutable LiveData for the request status
@@ -33,9 +32,9 @@ private val _properties = MutableLiveData<List<ResultsItem>>()
     var rating = MutableLiveData<String>()
     var language = MutableLiveData<String>()
     var genre = MutableLiveData<String>()
-    var vote = MutableLiveData<String>()
     var backposter = MutableLiveData<String>()
     var movieid = MutableLiveData<Int>()
+    var release_date = MutableLiveData<String>()
 
 
     init {
@@ -86,9 +85,9 @@ private val _properties = MutableLiveData<List<ResultsItem>>()
         rating.value = item?.voteAverage.toString()
         language.value = item?.originalLanguage
         genre.value = item?.genreIds.toString()
-        vote.value = item?.voteCount.toString()
         backposter.value = item?.backdropPath
         movieid.value = item?.id
+        release_date.value = item?.releaseDate
     }
 
 

@@ -77,12 +77,12 @@ class MovieDataFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
+        return when (item.itemId) {
             R.id.shareMenuButton -> {
                 onShare()
-                return true
+                true
             }
-        else -> return super.onOptionsItemSelected(item)
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
