@@ -33,6 +33,7 @@
             android:layout_marginTop="4dp"
             android:foregroundGravity="right"
             android:padding="2dp"
+            android:background="@drawable/corners"
             android:scaleType="fitXY"
             app:imageUrl="@{movieList.posterPath}"
             app:layout_constraintEnd_toEndOf="parent"

@@ -1,6 +1,7 @@
 package com.example.movieproject.overview
 
 
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -22,19 +23,19 @@ class ViewModel : ViewModel() {
 
     // Internally, we use a MutableLiveData, because we will be updating the List of MarsPhoto
     // with new values
-    private val _photos = MutableLiveData<List<ResultsItem>>()
+    private val _movie = MutableLiveData<List<ResultsItem>?>()
 
     // The external LiveData interface to the property is immutable, so only this class can modify
-    val photos: LiveData<List<ResultsItem>> = _photos
-    var title = MutableLiveData<String>()
-    var detail = MutableLiveData<String>()
-    var poster = MutableLiveData<String>()
-    var rating = MutableLiveData<String>()
-    var language = MutableLiveData<String>()
-    var genre = MutableLiveData<String>()
-    var backposter = MutableLiveData<String>()
-    var movieid = MutableLiveData<Int>()
-    var release_date = MutableLiveData<String>()
+    val photos: MutableLiveData<List<ResultsItem>?> = _movie
+    var title = MutableLiveData<String?>()
+    var detail = MutableLiveData<String?>()
+    var poster = MutableLiveData<String?>()
+    var rating = MutableLiveData<String?>()
+    var language = MutableLiveData<String?>()
+    var genre = MutableLiveData<String?>()
+    var backposter = MutableLiveData<String?>()
+    var movieid = MutableLiveData<Int?>()
+    var release_date = MutableLiveData<String?>()
 
 
     init {
@@ -49,7 +50,7 @@ class ViewModel : ViewModel() {
 
             try {
                 //MovieApi.retrofitService.getPhotos()
-                _photos.value = MovieApi.retrofitService.getMovies().results
+                _movie.value = MovieApi.retrofitService.getMovies().results
 
                 _status.value = MovieApiStatus.DONE
             } catch (e: Exception) {
@@ -58,7 +59,6 @@ class ViewModel : ViewModel() {
             }
         }
     }
-
 
      fun getMovieFilter(filter: MovieApiFilter) {
 
@@ -68,7 +68,7 @@ class ViewModel : ViewModel() {
 
             try {
                 //MovieApi.retrofitService.getPhotos()
-                _photos.value = MovieApi.retrofitService.getMovieFilter(filter.value).results
+                _movie.value = MovieApi.retrofitService.getMovieFilter(filter.value).results
 
                 _status.value = MovieApiStatus.DONE
             } catch (e: Exception) {
@@ -77,8 +77,15 @@ class ViewModel : ViewModel() {
             }
         }
     }
+
+    fun sort() {
+        val movieListTemp = _movie.value
+        _movie.value = movieListTemp?.sortedBy { it.releaseDate }
+
+    }
+
     fun movieInfo(index: Int) {
-        val item = _photos.value?.get(index)
+        val item = _movie.value?.get(index)
         title.value = item?.title
         detail.value = item?.overview
         poster.value = item?.posterPath

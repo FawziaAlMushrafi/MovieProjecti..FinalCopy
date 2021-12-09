@@ -16,4 +16,8 @@
         android:id="@+id/animation"
         android:title="@string/animation" />
 
+    <item
+        android:id="@+id/sort"
+        android:title="sort" />
+
 </menu>

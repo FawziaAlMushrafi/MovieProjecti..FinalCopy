@@ -21,6 +21,10 @@ import java.util.zip.GZIPOutputStream
 class MovieListFragment : Fragment() {
 
     private val viewModel: ViewModel by activityViewModels()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,6 +64,7 @@ class MovieListFragment : Fragment() {
             R.id.action -> viewModel.getMovieFilter(MovieApiFilter.SHOW_ACTION)
             R.id.adventure -> viewModel.getMovieFilter(MovieApiFilter.SHOW_ADVENTURE)
             R.id.animation -> viewModel.getMovieFilter(MovieApiFilter.SHOW_ANIMATION)
+            R.id.sort -> viewModel.sort()
 
         }
         return true
