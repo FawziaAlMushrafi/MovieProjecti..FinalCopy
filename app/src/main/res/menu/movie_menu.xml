@@ -1,11 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="@layout/fragment_movie_list">
 
 
-    <item android:id="@+id/SHOW_ALL"
-        android:title="Show Top" />
+    <item
+        android:id="@+id/SHOW_ALL"
+        android:title="Show Top Movies" />
     <item
         android:id="@+id/action"
         android:title="@string/action" />
@@ -17,7 +18,59 @@
         android:title="@string/animation" />
 
     <item
+        android:id="@+id/Documentary"
+        android:title="@string/Documentary" />
+    <item
+        android:id="@+id/Comedy"
+        android:title="@string/Comedy" />
+    <item
+        android:id="@+id/Crime"
+        android:title="@string/Crime" />
+    <item
+        android:id="@+id/Drama"
+        android:title="@string/Drama" />
+    <item
+        android:id="@+id/Family"
+        android:title="@string/Family" />
+    <item
+        android:id="@+id/Fantasy"
+        android:title="@string/Fantasy"/>
+    <item
+        android:id="@+id/History"
+        android:title="@string/History"/>
+    <item
+        android:id="@+id/Horror"
+        android:title="@string/Horror"/>
+    <item
+        android:id="@+id/Music"
+        android:title="@string/Music"/>
+    <item
+        android:id="@+id/Mystery"
+        android:title="@string/Mystery"/>
+    <item
+        android:id="@+id/Romance"
+        android:title="@string/Romance"/>
+    <item
+        android:id="@+id/Science_Fiction"
+        android:title="@string/Science_Fiction"/>
+    <item
+        android:id="@+id/TV_Movie"
+        android:title="@string/TV_Movie"/>
+    <item
+        android:id="@+id/Thriller"
+        android:title="@string/Thriller"/>
+    <item
+        android:id="@+id/War"
+        android:title="@string/War"/>
+    <item
+        android:id="@+id/Western"
+        android:title="@string/Western"/>
+
+    <item
         android:id="@+id/sort"
-        android:title="sort" />
+        android:icon="@drawable/ic_baseline_sort_24"
+        android:title="sort"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
 
 </menu>
